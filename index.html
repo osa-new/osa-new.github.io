@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osagie Newton Ebonni | DevOps & Cloud</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #60a5fa;
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid #334155;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .container { max-width: 850px; margin: -50px auto 50px; padding: 0 20px; }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
+        h2 { color: var(--secondary); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; }
+
+        .badge {
+            background: #1e293b;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 4px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 15px var(--primary);
+            cursor: default;
+        }
+
+        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--secondary); }
+        .contact-links a { color: var(--text-dim); text-decoration: none; margin: 0 10px; transition: color 0.3s; }
+        .contact-links a:hover { color: white; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>OSAGIE NEWTON EBONNI</h1>
+    <p style="color: var(--secondary); font-weight: 600;">DEVOPS ENGINEER | SYSTEMS ADMIN</p>
+    <div class="contact-links">
+        <a href="mailto:osagieebonni@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/osa-new"><i class="fab fa-github"></i> GitHub</a>
+        <span style="color: var(--text-dim);"><i class="fas fa-location-dot"></i> Lekki, Lagos</span>
+    </div>
+</header>
+
+<div class="container">
+    <section class="glass-card">
+        <h2>About Me</h2>
+        <p>Computer Science graduate [cite: 10] and IT professional specializing in system reliability and automation[cite: 1, 2]. Currently optimizing CI/CD pipelines and scaling containerized environments[cite: 5].</p>
+    </section>
+
+    <section class="glass-card">
+        <h2>The Stack</h2>
+        <div style="margin-bottom: 1rem;">
+            <strong>Cloud & Infrastructure:</strong><br>
+            <span class="badge">AWS (EC2/RDS)</span> <span class="badge">Azure (AKS)</span> <span class="badge">Terraform</span> <span class="badge">ARM Templates</span> [cite: 5, 11]
+        </div>
+        <div>
+            <strong>Tools & Automation:</strong><br>
+            <span class="badge">Docker</span> <span class="badge">Kubernetes</span> <span class="badge">Jenkins</span> <span class="badge">GitHub Actions</span>
+        </div>
+    </section>
+
+    <section class="glass-card">
+        <h2>Experience</h2>
+        <div style="margin-bottom: 1.5rem;">
+            <div class="job-header">
+                <span>Access Bank Plc</span>
+                <span>2025 - Present</span>
+            </div>
+            <p style="margin: 5px 0;"><strong>DevOps Engineer</strong></p>
+            <ul style="color: var(--text-dim); font-size: 0.95rem;">
+                <li>Automating builds and tests via CI/CD in Azure[cite: 5].</li>
+                <li>Scaling containerized apps using Docker and AKS[cite: 5].</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
