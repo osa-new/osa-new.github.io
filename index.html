@@ -1,137 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osagie Newton Ebonni | DevOps & Cloud</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <style>
-        :root {
-            --primary: #3b82f6;
-            --secondary: #60a5fa;
-            --bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
-        }
+<div class="container">
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
-            background-size: 40px 40px;
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.6;
-        }
+up to:
 
-        header {
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-bottom: 1px solid #334155;
-            animation: fadeInDown 0.8s ease-out;
-        }
+</div>
 
-        .container { max-width: 850px; margin: -50px auto 50px; padding: 0 20px; }
-
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
-        h2 { color: var(--secondary); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; }
-
-        .badge {
-            background: #1e293b;
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 4px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .badge:hover {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 0 15px var(--primary);
-            cursor: default;
-        }
-
-        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--secondary); }
-        .contact-links a { color: var(--text-dim); text-decoration: none; margin: 0 10px; transition: color 0.3s; }
-        .contact-links a:hover { color: white; }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>OSAGIE NEWTON EBONNI</h1>
-    <p style="color: var(--secondary); font-weight: 600;">DEVOPS ENGINEER | SYSTEMS ADMIN</p>
-    <div class="contact-links">
-        <a href="mailto:osagieebonni@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://github.com/osa-new"><i class="fab fa-github"></i> GitHub</a>
-        <span style="color: var(--text-dim);"><i class="fas fa-location-dot"></i> Lekki, Lagos</span>
-    </div>
-</header>
+with this:
 
 <div class="container">
+
     <section class="glass-card">
         <h2>About Me</h2>
-        <p>Computer Science graduate and IT professional specializing in system reliability and automation. Currently optimizing CI/CD pipelines and scaling containerized environments.</p>
+        <p>
+            Analytical Computer Science graduate and Systems Engineer with experience across DevOps, backend systems, infrastructure automation, and production application support.
+            Skilled in containerized deployments, CI/CD pipelines, Linux administration, cloud infrastructure, and AI-assisted operational tooling.
+            Passionate about building reliable systems, automating workflows, and bridging the gap between software applications and infrastructure operations.
+        </p>
     </section>
 
     <section class="glass-card">
-        <h2>The Stack</h2>
-        <div style="margin-bottom: 1rem;">
-            <strong>Cloud & Infrastructure:</strong><br>
-            <span class="badge">AWS (EC2/RDS)</span> <span class="badge">Azure (AKS)</span> <span class="badge">Terraform</span> <span class="badge">ARM Templates</span>
+        <h2>Core Stack</h2>
+
+        <div style="margin-bottom: 1.2rem;">
+            <strong>Cloud & Infrastructure</strong><br><br>
+            <span class="badge">AWS EC2</span>
+            <span class="badge">AWS RDS</span>
+            <span class="badge">Azure</span>
+            <span class="badge">Docker</span>
+            <span class="badge">Kubernetes (AKS)</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">Nginx</span>
+            <span class="badge">Linux</span>
+            <span class="badge">WSL2</span>
         </div>
+
+        <div style="margin-bottom: 1.2rem;">
+            <strong>Backend & Automation</strong><br><br>
+            <span class="badge">Python</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">Flask</span>
+            <span class="badge">REST APIs</span>
+            <span class="badge">Bash</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">LangGraph</span>
+            <span class="badge">Ollama</span>
+        </div>
+
         <div>
-            <strong>Tools & Automation:</strong><br>
-            <span class="badge">Docker</span> <span class="badge">Kubernetes</span> <span class="badge">Jenkins</span> <span class="badge">GitHub Actions</span>
+            <strong>Databases & Operations</strong><br><br>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">pgvector</span>
+            <span class="badge">Odoo ERP</span>
+            <span class="badge">Monitoring</span>
+            <span class="badge">CI/CD</span>
         </div>
     </section>
 
     <section class="glass-card">
         <h2>Experience</h2>
-        <div style="margin-bottom: 1.5rem;">
+
+        <div style="margin-bottom: 2rem;">
             <div class="job-header">
-                <span>Access Bank Plc</span>
-                <span>2025 - Present</span>
+                <span>Tech4mation / Cybervilla</span>
+                <span>2026 - Present</span>
             </div>
-            <p style="margin: 5px 0;"><strong>DevOps Engineer</strong></p>
+
+            <p style="margin: 5px 0;">
+                <strong>Application Support Engineer</strong>
+            </p>
+
             <ul style="color: var(--text-dim); font-size: 0.95rem;">
-                <li>Automating builds and tests via CI/CD in Azure.</li>
-                <li>Scaling containerized apps using Docker and AKS.</li>
+                <li>Manage enterprise Odoo ERP infrastructure, backend services, and database operations across live production environments.</li>
+                <li>Troubleshoot complex POS, inventory, and synchronization issues using SQL, API debugging, and root-cause analysis.</li>
+                <li>Support integrations and omnichannel infrastructure by diagnosing REST API, webhook, and payload delivery failures.</li>
+                <li>Optimize application performance, server-side workflows, and operational reliability across customer-facing platforms.</li>
             </ul>
         </div>
-    </section>
-</div>
 
-</body>
-</html>
+        <div style="margin-bottom: 2rem;">
+            <div class="job-header">
+                <span>Access Bank Plc</span>
+                <span>2025 - 2026</span>
+            </div>
+
+            <p style="margin: 5px 0;">
+                <strong>DevOps Engineer</strong>
+            </p>
+
+            <ul style="color: var(--text-dim); font-size: 0.95rem;">
+                <li>Built and maintained CI/CD pipelines in Azure across development, staging, and production environments.</li>
+                <li>Managed Dockerized workloads and Kubernetes deployments using AKS.</li>
+                <li>Provisioned infrastructure using Terraform and administered Linux-based production servers.</li>
+                <li>Maintained PostgreSQL environments including migrations, tuning, backup, and recovery operations.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="glass-card">
+        <h2>Projects</h2>
+
+        <div style="margin-bottom: 1.8rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--secondary);">
+                AI Incident Remediation System
+            </h3>
+
+            <p style="color: var(--text-dim);">
+                Built an AI-driven infrastructure incident analysis system using Python, LangGraph, and local LLMs via Ollama to diagnose operational failures and generate automated remediation recommendations using Bash and Terraform.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 1.8rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--secondary);">
+                Automated AI Reporting System
+            </h3>
+
+            <p style="color: var(--text-dim);">
+                Developed a Dockerized AI-powered reporting platform using Flask and APScheduler to automate scheduled report generation, email delivery, and operational analysis workflows on a Linux VPS environment.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 1.8rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--secondary);">
+                ERP / API Monitoring Dashboard
+            </h3>
+
+            <p style="color: var(--text-dim);">
+                Built a self-hosted monitoring dashboard for API uptime tracking, response time analysis, and alerting using Flask, SQLite, background schedulers, and Dockerized infrastructure services.
+            </p>
+        </div>
+
+        <div>
+            <h3 style="margin-bottom: 0.5rem; color: var(--secondary);">
+                AWS PrestaShop Deployment
+            </h3>
+
+            <p style="color: var(--text-dim);">
+                Deployed and configured a production-ready PrestaShop e-commerce platform on AWS EC2 with RDS-backed database infrastructure and secure administrative access controls.
+            </p>
+        </div>
+
+    </section>
+
+</div>
