@@ -3,191 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osagie Newton Ebonni | Systems Engineer & DevOps</title>
-    <script src="https://cloudflare.com"></script>
+    <title>Osagie Newton Ebonni | Systems Engineer & Infrastructure Architect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
-        :root {
-            --primary: #3b82f6;
-            --secondary: #60a5fa;
-            --bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-main: #f1f5f9;
-            --text-dim: #94a3b8;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
         }
-
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
-            background-size: 40px 40px;
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            min-height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-bottom: 1px solid #334155;
-            padding: 2rem 1rem;
-            box-sizing: border-box;
-        }
-
-        .container { max-width: 850px; margin: -50px auto 50px; padding: 0 20px; }
-
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        h1 { font-size: 2.5rem; margin: 0 0 10px 0; letter-spacing: -1px; }
-        h2 { color: var(--secondary); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; margin-bottom: 1.5rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem;}
-        h3 { margin-top: 0; color: #fff; font-size: 1.3rem; }
-
-        .subtitle { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 1.5rem; max-width: 600px; }
-
-        .badge {
-            background: #1e293b;
-            color: var(--secondary);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 4px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .badge:hover {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 0 15px var(--primary);
-            cursor: default;
-            border-color: var(--primary);
-        }
-
-        .job { margin-bottom: 2rem; }
-        .job:last-child { margin-bottom: 0; }
-        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--secondary); flex-wrap: wrap; margin-bottom: 0.2rem; }
-        .job-meta { display: flex; justify-content: space-between; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
-        
-        .project { margin-bottom: 2rem; }
-        .project:last-child { margin-bottom: 0; }
-        .project-title { font-weight: bold; color: var(--secondary); font-size: 1.1rem; margin-bottom: 0.5rem; }
-
-        ul { padding-left: 1.2rem; margin: 0 0 1rem 0; }
-        li { margin-bottom: 0.5rem; color: var(--text-main); }
-        li::marker { color: var(--primary); }
-
-        .contact-links a { color: var(--text-dim); text-decoration: none; margin: 0 12px; font-size: 1.1rem; transition: color 0.3s; }
-        .contact-links a:hover { color: var(--secondary); }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .job-header, .job-meta { flex-direction: column; }
-            .glass-card { padding: 1.5rem; }
-        }
+        .skill-category { margin-bottom: 1.5rem; }
+        .skill-category h4 { color: var(--primary); margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Osagie Newton Ebonni</h1>
-        <div class="subtitle">Systems Engineer & DevOps Specialist</div>
+        <h2>Systems Engineer | ERP Infrastructure & Cloud</h2>
         <div class="contact-links">
-            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="#"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/osa-new"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
     </header>
 
     <div class="container">
-        
-        <!-- Profile Summary -->
-        <div class="glass-card">
-            <h2>About Me</h2>
-            <p style="margin: 0;">
-                Analytical Computer Science Graduate and Systems Engineer with a deep understanding of software development, server-side logic, and infrastructure management. Proven track record in optimizing web performance, automating data workflows, and managing production environments. Highly adaptable professional capable of bridging the gap between application code and underlying systems architecture to ensure scalable, reliable, and secure deployments.
-            </p>
-        </div>
+        <!-- Professional Summary -->
+        <section class="glass-card">
+            <h3>Professional Profile</h3>
+            <p>Analytical Systems Engineer with a focus on bridging the gap between application code and infrastructure architecture. Experienced in managing enterprise ERP environments (Odoo), optimizing CI/CD pipelines, and automating complex data workflows to ensure scalable, secure deployments.</p>
+        </section>
 
         <!-- Experience -->
-        <div class="glass-card">
-            <h2>Professional Experience</h2>
+        <section class="glass-card">
+            <h3>Experience</h3>
             
-            <div class="job">
-                <div class="job-header">Application Support Engineer</div>
-                <div class="job-meta">
-                    <span>Tech4mation, Cybervilla</span>
-                    <span>May 2026 - Present | Lagos, Nigeria</span>
+            <div style="margin-bottom: 2rem;">
+                <div class="job-header">
+                    <span>Application Support Engineer | Tech4mation, Cybervilla</span>
+                    <span>2026 - Present</span>
                 </div>
                 <ul>
-                    <li>Manage enterprise ERP infrastructure on the Odoo platform, leveraging Python and SQL to maintain backend database integrity, optimize queries, and ensure the stability of core business logic layers.</li>
-                    <li>Troubleshoot and resolve complex POS, inventory, and stock workflow discrepancies across live environments, ensuring absolute data consistency and synchronization across retail channels.</li>
-                    <li>Oversee system integrations and omnichannel infrastructure, debugging REST APIs and webhooks to isolate payload or connectivity errors and maintain seamless system-to-system communication.</li>
-                    <li>Optimize site architecture and server-side rendering for high-traffic platforms, identifying performance bottlenecks and resolving technical application bugs at the root-cause level.</li>
-                    <li>Support high-priority customer-facing business applications, managing incremental upgrades, data validation, and platform maintenance to meet rigid operational quality standards.</li>
+                    <li>Maintain enterprise Odoo ERP infrastructure using Python/SQL to ensure database integrity.</li>
+                    <li>Resolve critical POS and inventory synchronization issues across omnichannel retail channels.</li>
+                    <li>Debug REST APIs and webhooks; optimize server-side rendering for high-traffic environments.</li>
                 </ul>
             </div>
 
-            <div class="job">
-                <div class="job-header">DevOps Engineer</div>
-                <div class="job-meta">
-                    <span>Access Bank Plc</span>
-                    <span>June 2025 - March 2026 | Lagos, Nigeria</span>
+            <div>
+                <div class="job-header">
+                    <span>DevOps Engineer | Access Bank Plc</span>
+                    <span>2025 - 2026</span>
                 </div>
                 <ul>
-                    <li>Design, implement, and maintain CI/CD pipelines in Microsoft Azure to automate build, test, and deployment processes across dev, staging, and production environments.</li>
-                    <li>Deploy, manage, and scale containerized applications using Docker and Kubernetes (AKS), ensuring high availability and zero-downtime releases.</li>
-                    <li>Provision and manage cloud infrastructure using Infrastructure as Code (Terraform), enabling repeatable and version-controlled deployments.</li>
-                    <li>Administer Linux-based production servers (Ubuntu), including system configuration, patch management, performance tuning, and troubleshooting.</li>
-                    <li>Manage PostgreSQL databases, including installation, configuration, backup/recovery, performance optimization, and environment migrations.</li>
+                    <li>Automated CI/CD pipelines in Azure for containerized microservices (Docker/Kubernetes).</li>
+                    <li>Provisioned cloud infrastructure via Terraform (IaC) and managed Ubuntu production clusters.</li>
+                    <li>Managed high-availability PostgreSQL databases, performance tuning, and migrations.</li>
                 </ul>
             </div>
+        </section>
 
-            <div class="job">
-                <div class="job-header">SOC Analyst</div>
-                <div class="job-meta">
-                    <span>Access Bank Plc</span>
-                    <span>May 2025 | Lagos, Nigeria</span>
+        <!-- Skill Grid -->
+        <section class="glass-card">
+            <h3>Core Competencies</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Engineering</h4>
+                    <span class="badge">Python</span> <span class="badge">JavaScript</span> <span class="badge">SQL</span>
                 </div>
-                <ul>
-                    <li>Monitor and respond to system, network, and application alerts using centralized monitoring tools.</li>
-                    <li>Perform incident triage and root cause analysis for service disruptions and performance issues.</li>
-                    <li>Collaborate with infrastructure and engineering teams to remediate outages and recurring failures.</li>
-                    <li>Generate operational reports on incidents, trends, and response effectiveness.</li>
-                    <li>Support the availability, integrity, and reliability of enterprise production applications.</li>
-                </ul>
+                <div class="skill-category">
+                    <h4>Cloud & Infra</h4>
+                    <span class="badge">Azure</span> <span class="badge">AWS</span> <span class="badge">Docker</span> <span class="badge">K8s</span>
+                </div>
+                <div class="skill-category">
+                    <h4>Automation</h4>
+                    <span class="badge">Terraform</span> <span class="badge">Bash</span> <span class="badge">CI/CD</span>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- Projects -->
-        <div class="glass-card">
-            <h2>Featured Projects</h2>
+        <section class="glass-card">
+            <h3>Key Projects</h3>
+            <p><strong>AI Incident Remediation System:</strong> Built an AI-driven incident analysis system using Python and LangGraph to diagnose infrastructure issues and generate remediation steps (Terraform/Bash). Integrated local LLMs via Ollama and containerized supporting services with Docker.</p>
             
-            <div class="project">
-                <div class="project-title">AI Incident Remediation System</div>
-                <p>Built an AI-driven incident analysis system using Python and LangGraph to diagnose infrastructure issues and generate remediation steps (Terraform/Bash). Integrated local LLMs via Ollama, containerized supporting services with Docker, and implemented PostgreSQL + pgvector for incident similarity search.</p>
-            </div>
-
-            <div class="project">
-                <div class="project-title">Automated AI Reporting System</div>
-                <p>Built and deployed an AI-powered automated reporting system using Flask, APScheduler, and Docker to collect operational reports and deliver scheduled email summaries. Configured Gunicorn, Nginx, Cloudflare DNS, and Linux VPS hosting for secure production deployments.</p>
-            </div>
-
+            <p><strong>Automated AI Reporting System:</strong> Built and deployed an AI-powered automated reporting system using Flask, APScheduler, and Docker to collect employee operational reports and generate AI-driven analysis. Configured Gunicorn, Nginx, and Cloudflare DNS for production deployment.</p>
+            
+            <p><strong>ERP / API Monitoring Dashboard:</strong> Built a self-hosted API monitoring dashboard with Flask and SQLite, featuring a background scheduler for health checks, response time tracking, and uptime reporting. Secured with JWT/API key auth and Gmail SMTP alerts.</p>
+            
+            <p><strong>PrestaShop E-Commerce Deployment:</strong> Deployed a PrestaShop e-commerce platform on AWS EC2 with an RDS MySQL backend. Configured security groups, SSH access, and server permissions for secure public hosting and admin access.</p>
+        </section>
+    </div>
+</body>
+</html>
