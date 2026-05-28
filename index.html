@@ -6,93 +6,90 @@
     <title>Osagie Newton Ebonni | Systems Engineer & Infrastructure Architect</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 1rem;
+        :root {
+            --primary: #3b82f6; --secondary: #60a5fa; --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7); --text-main: #f1f5f9; --text-dim: #94a3b8;
         }
-        .skill-category { margin-bottom: 1.5rem; }
-        .skill-category h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg); background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0); background-size: 40px 40px; color: var(--text-main); margin: 0; line-height: 1.6; }
+        header { height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; }
+        .container { max-width: 850px; margin: -50px auto 50px; padding: 0 20px; }
+        .glass-card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem; transition: transform 0.3s ease; }
+        .glass-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
+        h2 { color: var(--secondary); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; }
+        .badge { background: #1e293b; color: var(--secondary); border: 1px solid var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin: 4px; display: inline-block; }
+        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--secondary); margin-bottom: 10px; }
+        .contact-links a { color: var(--text-dim); text-decoration: none; margin: 0 10px; }
+        .project-card { border-left: 3px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; color: #cbd5e1; }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <h1>Osagie Newton Ebonni</h1>
-        <h2>Systems Engineer | ERP Infrastructure & Cloud</h2>
+        <h2>Systems Engineer & DevOps Specialist</h2>
         <div class="contact-links">
             <a href="#"><i class="fas fa-envelope"></i> Email</a>
             <a href="https://github.com/osa-new"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
     </header>
 
     <div class="container">
-        <!-- Professional Summary -->
+        <!-- Professional Profile -->
         <section class="glass-card">
             <h3>Professional Profile</h3>
-            <p>Analytical Systems Engineer with a focus on bridging the gap between application code and infrastructure architecture. Experienced in managing enterprise ERP environments (Odoo), optimizing CI/CD pipelines, and automating complex data workflows to ensure scalable, secure deployments.</p>
+            <p>Analytical Computer Science Graduate and Systems Engineer with a deep understanding of software development, server-side logic, and infrastructure management. Proven track record in optimizing web performance, automating data workflows, and managing production environments.</p>
         </section>
 
         <!-- Experience -->
         <section class="glass-card">
-            <h3>Experience</h3>
-            
+            <h3>Professional Experience</h3>
             <div style="margin-bottom: 2rem;">
-                <div class="job-header">
-                    <span>Application Support Engineer | Tech4mation, Cybervilla</span>
-                    <span>2026 - Present</span>
-                </div>
+                <div class="job-header"><span>Application Support Engineer | Tech4mation, Cybervilla</span> <span>May 2026 - Present</span></div>
                 <ul>
-                    <li>Maintain enterprise Odoo ERP infrastructure using Python/SQL to ensure database integrity.</li>
-                    <li>Resolve critical POS and inventory synchronization issues across omnichannel retail channels.</li>
-                    <li>Debug REST APIs and webhooks; optimize server-side rendering for high-traffic environments.</li>
+                    <li>Manage enterprise ERP infrastructure on the Odoo platform, leveraging Python and SQL to maintain backend database integrity, optimize queries, and ensure stability.</li>
+                    <li>Troubleshoot and resolve complex POS, inventory, and stock workflow discrepancies across live environments.</li>
+                    <li>Oversee system integrations and omnichannel infrastructure, debugging REST APIs and webhooks to maintain seamless communication.</li>
                 </ul>
             </div>
-
-            <div>
-                <div class="job-header">
-                    <span>DevOps Engineer | Access Bank Plc</span>
-                    <span>2025 - 2026</span>
-                </div>
+            <div style="margin-bottom: 2rem;">
+                <div class="job-header"><span>DevOps Engineer | Access Bank Plc</span> <span>June 2025 - March 2026</span></div>
                 <ul>
-                    <li>Automated CI/CD pipelines in Azure for containerized microservices (Docker/Kubernetes).</li>
-                    <li>Provisioned cloud infrastructure via Terraform (IaC) and managed Ubuntu production clusters.</li>
-                    <li>Managed high-availability PostgreSQL databases, performance tuning, and migrations.</li>
+                    <li>Design, implement, and maintain CI/CD pipelines in Microsoft Azure to automate build, test, and deployment processes.</li>
+                    <li>Deploy, manage, and scale containerized applications using Docker and Kubernetes (AKS).</li>
+                    <li>Provision and manage cloud infrastructure using Terraform, enabling repeatable and version-controlled deployments.</li>
                 </ul>
-            </div>
-        </section>
-
-        <!-- Skill Grid -->
-        <section class="glass-card">
-            <h3>Core Competencies</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Engineering</h4>
-                    <span class="badge">Python</span> <span class="badge">JavaScript</span> <span class="badge">SQL</span>
-                </div>
-                <div class="skill-category">
-                    <h4>Cloud & Infra</h4>
-                    <span class="badge">Azure</span> <span class="badge">AWS</span> <span class="badge">Docker</span> <span class="badge">K8s</span>
-                </div>
-                <div class="skill-category">
-                    <h4>Automation</h4>
-                    <span class="badge">Terraform</span> <span class="badge">Bash</span> <span class="badge">CI/CD</span>
-                </div>
             </div>
         </section>
 
         <!-- Projects -->
         <section class="glass-card">
             <h3>Key Projects</h3>
-            <p><strong>AI Incident Remediation System:</strong> Built an AI-driven incident analysis system using Python and LangGraph to diagnose infrastructure issues and generate remediation steps (Terraform/Bash). Integrated local LLMs via Ollama and containerized supporting services with Docker.</p>
-            
-            <p><strong>Automated AI Reporting System:</strong> Built and deployed an AI-powered automated reporting system using Flask, APScheduler, and Docker to collect employee operational reports and generate AI-driven analysis. Configured Gunicorn, Nginx, and Cloudflare DNS for production deployment.</p>
-            
-            <p><strong>ERP / API Monitoring Dashboard:</strong> Built a self-hosted API monitoring dashboard with Flask and SQLite, featuring a background scheduler for health checks, response time tracking, and uptime reporting. Secured with JWT/API key auth and Gmail SMTP alerts.</p>
-            
-            <p><strong>PrestaShop E-Commerce Deployment:</strong> Deployed a PrestaShop e-commerce platform on AWS EC2 with an RDS MySQL backend. Configured security groups, SSH access, and server permissions for secure public hosting and admin access.</p>
+            <div class="project-card">
+                <h4>AI Incident Remediation System</h4>
+                <p>Built an AI-driven incident analysis system using Python and LangGraph to diagnose infrastructure issues and generate remediation steps (Terraform/Bash). Integrated local LLMs via Ollama and containerized supporting services with Docker. Implemented PostgreSQL + pgvector for incident storage.</p>
+            </div>
+            <div class="project-card">
+                <h4>Automated AI Reporting System</h4>
+                <p>Built and deployed an AI-powered automated reporting system using Flask, APScheduler, and Docker to collect employee operational reports and generate AI-driven analysis. Configured Gunicorn, Nginx, and Cloudflare DNS for production deployment.</p>
+            </div>
+            <div class="project-card">
+                <h4>ERP / API Monitoring Dashboard</h4>
+                <p>Built a self-hosted API monitoring dashboard with Flask and SQLite, featuring a background scheduler for health checks, response time tracking, and uptime reporting. Secured with JWT/API key auth and Gmail SMTP alerts.</p>
+            </div>
+            <div class="project-card">
+                <h4>PrestaShop E-Commerce Deployment</h4>
+                <p>Deployed a PrestaShop e-commerce platform on AWS EC2 with an RDS MySQL backend. Configured security groups, SSH access, and server permissions for secure public hosting and admin access.</p>
+            </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section class="glass-card">
+            <h3>Core Competencies</h3>
+            <span class="badge">Python</span> <span class="badge">JavaScript</span> <span class="badge">SQL</span> <span class="badge">Docker</span> <span class="badge">Kubernetes</span> <span class="badge">Terraform</span> <span class="badge">Azure</span> <span class="badge">AWS</span> <span class="badge">Odoo</span> <span class="badge">Linux</span>
         </section>
     </div>
 </body>
