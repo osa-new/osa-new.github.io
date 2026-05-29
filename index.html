@@ -1,101 +1,1008 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osagie Newton Ebonni | Systems Engineer & Infrastructure Architect</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <style>
-        :root {
-            --primary: #3b82f6; --secondary: #60a5fa; --bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7); --text-main: #f1f5f9; --text-dim: #94a3b8;
-        }
-        body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg); background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0); background-size: 40px 40px; color: var(--text-main); margin: 0; line-height: 1.6; }
-        
-        /* Header Fix: Added z-index and position */
-        header { height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; position: relative; z-index: 10; }
-        
-        /* Container Fix: Changed top margin from -50px to 20px so it doesn't overlap header */
-        .container { max-width: 850px; margin: 20px auto 50px; padding: 0 20px; }
-        
-        .glass-card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2.5rem; margin-bottom: 2rem; transition: transform 0.3s ease; }
-        .glass-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
-        h2 { color: var(--secondary); font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 0; }
-        .badge { background: #1e293b; color: var(--secondary); border: 1px solid var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin: 4px; display: inline-block; }
-        .job-header { display: flex; justify-content: space-between; font-weight: bold; color: var(--secondary); margin-bottom: 10px; }
-        .contact-links a { color: var(--text-dim); text-decoration: none; margin: 0 10px; }
-        .project-card { border-left: 3px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; color: #cbd5e1; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Osagie Newton Ebonni | Systems Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #161616;
+    --border: #1e1e1e;
+    --border2: #2a2a2a;
+    --green: #00ff88;
+    --green-dim: #00cc6a;
+    --green-faint: rgba(0,255,136,0.07);
+    --green-glow: rgba(0,255,136,0.15);
+    --amber: #ffb800;
+    --red: #ff4444;
+    --text: #e8e8e8;
+    --text2: #888;
+    --text3: #555;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Space Grotesk', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--green); color: #000; }
+
+  /* Scanline overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 13px;
+    color: var(--green);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo span { color: var(--text3); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    color: var(--text2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green); text-decoration: none; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(1.5rem, 6vw, 6rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Grid background */
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Radial glow behind text */
+  #hero::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(0,255,136,0.06) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero-prompt {
+    font-size: 12px;
+    color: var(--text3);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-prompt::before { content: '$ '; color: var(--green); }
+
+  .hero-name {
+    font-family: var(--mono);
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name .accent { color: var(--green); }
+
+  .hero-title {
+    font-family: var(--sans);
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--text2);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 4px 12px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--bg2);
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-faint);
+  }
+
+  .tag.active {
+    border-color: var(--green);
+    color: #000;
+    background: var(--green);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 10px 24px;
+    border-radius: 2px;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: #000;
+    border: 1px solid var(--green);
+    font-weight: 700;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--green);
+    text-decoration: none;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border2);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--text2);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  /* Blinking cursor */
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: var(--green);
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* ── SECTION WRAPPER ── */
+  section {
+    padding: 6rem clamp(1.5rem, 6vw, 6rem);
+    border-top: 1px solid var(--border);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 11px;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .section-label::before { content: '// '; }
+
+  .section-title {
+    font-family: var(--sans);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── TERMINAL BLOCK ── */
+  .terminal {
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 720px;
+  }
+
+  .terminal-bar {
+    background: var(--bg3);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+
+  .terminal-title {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+  }
+
+  .terminal-body {
+    padding: 1.25rem 1.5rem;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .t-line { display: block; }
+  .t-prompt { color: var(--green); }
+  .t-cmd { color: #fff; }
+  .t-out { color: var(--text2); padding-left: 1rem; }
+  .t-key { color: var(--amber); }
+  .t-val { color: var(--green-dim); }
+  .t-comment { color: var(--text3); font-style: italic; }
+
+  /* ── EXPERIENCE ── */
+  .exp-list { display: flex; flex-direction: column; gap: 2px; }
+
+  .exp-item {
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .exp-item:hover { border-color: var(--border2); }
+
+  .exp-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    background: var(--bg2);
+    user-select: none;
+    transition: background 0.2s;
+  }
+
+  .exp-header:hover { background: var(--bg3); }
+
+  .exp-status {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+  }
+
+  .exp-status.past { background: var(--text3); box-shadow: none; }
+
+  .exp-role {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    flex: 1;
+  }
+
+  .exp-company {
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  .exp-date {
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .exp-arrow {
+    font-size: 10px;
+    color: var(--text3);
+    transition: transform 0.2s;
+  }
+
+  .exp-body {
+    display: none;
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  .exp-body.open { display: block; }
+  .exp-item.open .exp-arrow { transform: rotate(90deg); }
+
+  .exp-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .exp-body li {
+    font-size: 13px;
+    color: var(--text2);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-body li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+  }
+
+  /* ── SKILLS GRID ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .skill-group {
+    background: var(--bg2);
+    padding: 1.25rem 1.5rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-group-label {
+    font-size: 10px;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-chip {
+    font-size: 11px;
+    padding: 3px 8px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    border-radius: 2px;
+    background: var(--bg);
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .project-card {
+    background: var(--bg2);
+    padding: 1.5rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--green);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .project-card:hover { background: var(--bg3); }
+  .project-card:hover::before { opacity: 1; }
+
+  .project-num {
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .project-desc {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .stack-tag {
+    font-size: 10px;
+    padding: 2px 7px;
+    background: var(--green-faint);
+    border: 1px solid rgba(0,255,136,0.2);
+    color: var(--green-dim);
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+    .hero-name { font-size: 2.4rem; }
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--bg2);
+    color: var(--text2);
+    transition: all 0.2s;
+    font-size: 13px;
+  }
+
+  .contact-link:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-faint);
+    text-decoration: none;
+  }
+
+  .contact-link-icon {
+    font-size: 16px;
+    color: var(--green);
+    font-family: var(--mono);
+    min-width: 20px;
+  }
+
+  .contact-link-label {
+    font-size: 10px;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .contact-link-val {
+    font-size: 13px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem clamp(1.5rem, 6vw, 6rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text3);
+  }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Typing animation for hero */
+  @keyframes typeIn {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .typed {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typeIn 1.2s steps(40, end) forwards;
+  }
+</style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Osagie Newton Ebonni</h1>
-        <h2>Systems Engineer & DevOps Specialist</h2>
-        <div class="contact-links">
-            <a href="#"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://github.com/osa-new"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </header>
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">neo@systems<span>:~$</span></span>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
 
-    <div class="container">
-        <!-- Professional Profile -->
-        <section class="glass-card">
-            <h3>Professional Profile</h3>
-            <p>Analytical Computer Science Graduate and Systems Engineer with a deep understanding of software development, server-side logic, and infrastructure management. Proven track record in optimizing web performance, automating data workflows, and managing production environments.</p>
-        </section>
-
-        <!-- Experience -->
-        <section class="glass-card">
-            <h3>Professional Experience</h3>
-            <div style="margin-bottom: 2rem;">
-                <div class="job-header"><span>Application Support Engineer | Tech4mation, Cybervilla</span> <span>May 2026 - Present</span></div>
-                <ul>
-                    <li>Manage enterprise ERP infrastructure on the Odoo platform, leveraging Python and SQL to maintain backend database integrity, optimize queries, and ensure stability.</li>
-                    <li>Troubleshoot and resolve complex POS, inventory, and stock workflow discrepancies across live environments.</li>
-                    <li>Oversee system integrations and omnichannel infrastructure, debugging REST APIs and webhooks to maintain seamless communication.</li>
-                </ul>
-            </div>
-            <div style="margin-bottom: 2rem;">
-                <div class="job-header"><span>DevOps Engineer | Access Bank Plc</span> <span>June 2025 - March 2026</span></div>
-                <ul>
-                    <li>Design, implement, and maintain CI/CD pipelines in Microsoft Azure to automate build, test, and deployment processes.</li>
-                    <li>Deploy, manage, and scale containerized applications using Docker and Kubernetes (AKS).</li>
-                    <li>Provision and manage cloud infrastructure using Terraform, enabling repeatable and version-controlled deployments.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="glass-card">
-            <h3>Key Projects</h3>
-            <div class="project-card">
-                <h4>AI Incident Remediation System</h4>
-                <p>Built an AI-driven incident analysis system using Python and LangGraph to diagnose infrastructure issues and generate remediation steps (Terraform/Bash). Integrated local LLMs via Ollama and containerized supporting services with Docker. Implemented PostgreSQL + pgvector for incident storage.</p>
-            </div>
-            <div class="project-card">
-                <h4>Automated AI Reporting System</h4>
-                <p>Built and deployed an AI-powered automated reporting system using Flask, APScheduler, and Docker to collect employee operational reports and generate AI-driven analysis. Configured Gunicorn, Nginx, and Cloudflare DNS for production deployment.</p>
-            </div>
-            <div class="project-card">
-                <h4>ERP / API Monitoring Dashboard</h4>
-                <p>Built a self-hosted API monitoring dashboard with Flask and SQLite, featuring a background scheduler for health checks, response time tracking, and uptime reporting. Secured with JWT/API key auth and Gmail SMTP alerts.</p>
-            </div>
-            <div class="project-card">
-                <h4>PrestaShop E-Commerce Deployment</h4>
-                <p>Deployed a PrestaShop e-commerce platform on AWS EC2 with an RDS MySQL backend. Configured security groups, SSH access, and server permissions for secure public hosting and admin access.</p>
-            </div>
-        </section>
-
-        <!-- Core Competencies -->
-        <section class="glass-card">
-            <h3>Core Competencies</h3>
-            <span class="badge">Python</span> <span class="badge">JavaScript</span> <span class="badge">SQL</span> <span class="badge">Docker</span> <span class="badge">Kubernetes</span> <span class="badge">Terraform</span> <span class="badge">Azure</span> <span class="badge">AWS</span> <span class="badge">Odoo</span> <span class="badge">Linux</span>
-        </section>
+<!-- HERO -->
+<section id="hero" style="border-top: none;">
+  <div class="hero-inner">
+    <p class="hero-prompt">whoami</p>
+    <h1 class="hero-name">
+      Osagie<br><span class="accent">Newton Ebonni</span>
+    </h1>
+    <p class="hero-title">Systems Engineer &amp; DevOps Specialist<span class="cursor"></span></p>
+    <div class="hero-tags">
+      <span class="tag active">Linux</span>
+      <span class="tag active">CLI</span>
+      <span class="tag active">Automation</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Kubernetes</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">Python</span>
+      <span class="tag">Bash</span>
+      <span class="tag">Red Teaming</span>
     </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">./view_projects</a>
+      <a href="#contact" class="btn btn-secondary">get_in_touch()</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-in">
+    <span class="section-label">about</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="terminal fade-in">
+    <div class="terminal-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span class="terminal-title">neo@kali: ~</span>
+    </div>
+    <div class="terminal-body">
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat profile.txt</span></span>
+      <br>
+      <span class="t-line t-out">Analytical CS graduate and systems engineer with a deep</span>
+      <span class="t-line t-out">understanding of software, server-side logic, and infra.</span>
+      <span class="t-line t-out">I live in the terminal. I automate everything I touch.</span>
+      <span class="t-line t-out">I break things to understand how they work.</span>
+      <br>
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">cat interests.json</span></span>
+      <br>
+      <span class="t-line t-out">{</span>
+      <span class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"focus"</span>: <span class="t-val">"DevOps, Infrastructure, Systems Engineering"</span>,</span>
+      <span class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"hobby"</span>: <span class="t-val">"Red Teaming &amp; Ethical Hacking"</span>,</span>
+      <span class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"os"</span>: <span class="t-val">"Ubuntu / Kali Linux"</span>,</span>
+      <span class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"editor"</span>: <span class="t-val">"VS Code (with vim bindings, obviously)"</span>,</span>
+      <span class="t-line t-out">&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">"Lekki, Lagos, Nigeria"</span></span>
+      <span class="t-line t-out">}</span>
+      <br>
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">uptime</span></span>
+      <span class="t-line t-out"><span class="t-comment"># 6+ years grinding. still going.</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-in">
+    <span class="section-label">experience</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="exp-list fade-in">
+
+    <div class="exp-item open" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-status"></div>
+        <span class="exp-role">Application Support Engineer</span>
+        <span class="exp-company">Tech4mation / Cybervilla</span>
+        <span class="exp-date">May 2026 – Present</span>
+        <span class="exp-arrow">▶</span>
+      </div>
+      <div class="exp-body open">
+        <ul>
+          <li>Manage enterprise ERP infrastructure on Odoo; backend DB integrity via Python &amp; SQL</li>
+          <li>Troubleshoot POS, inventory &amp; stock discrepancies across live retail environments</li>
+          <li>Debug REST APIs and webhooks for omnichannel system integrations</li>
+          <li>Optimize server-side rendering and architecture for high-traffic platforms</li>
+          <li>Manage incremental upgrades, data validation, and platform maintenance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-status past"></div>
+        <span class="exp-role">DevOps Engineer</span>
+        <span class="exp-company">Access Bank Plc</span>
+        <span class="exp-date">Jun 2025 – Mar 2026</span>
+        <span class="exp-arrow">▶</span>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>Designed and maintained CI/CD pipelines in Azure for dev/staging/prod environments</li>
+          <li>Deployed and scaled containerized apps using Docker and Kubernetes (AKS)</li>
+          <li>Provisioned cloud infrastructure via Terraform — repeatable, version-controlled</li>
+          <li>Administered Ubuntu production servers: config, patching, performance tuning</li>
+          <li>Managed PostgreSQL: installation, backups, optimization, migrations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item" onclick="toggleExp(this)">
+      <div class="exp-header">
+        <div class="exp-status past"></div>
+        <span class="exp-role">SOC Analyst</span>
+        <span class="exp-company">Access Bank Plc</span>
+        <span class="exp-date">May 2025</span>
+        <span class="exp-arrow">▶</span>
+      </div>
+      <div class="exp-body">
+        <ul>
+          <li>Monitored system, network, and application alerts via centralized tooling</li>
+          <li>Performed incident triage and root cause analysis</li>
+          <li>Generated operational reports on incidents, trends, and response effectiveness</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-in">
+    <span class="section-label">skills</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid fade-in">
+    <div class="skill-group">
+      <p class="skill-group-label">Infrastructure &amp; Cloud</p>
+      <div class="skill-items">
+        <span class="skill-chip">Linux</span>
+        <span class="skill-chip">Docker</span>
+        <span class="skill-chip">Kubernetes</span>
+        <span class="skill-chip">Azure</span>
+        <span class="skill-chip">AWS</span>
+        <span class="skill-chip">Nginx</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-label">Automation &amp; IaC</p>
+      <div class="skill-items">
+        <span class="skill-chip">Terraform</span>
+        <span class="skill-chip">Bash/Zsh</span>
+        <span class="skill-chip">GitHub Actions</span>
+        <span class="skill-chip">CI/CD</span>
+        <span class="skill-chip">APScheduler</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-label">Languages</p>
+      <div class="skill-items">
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Bash</span>
+        <span class="skill-chip">PHP</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-label">Data &amp; Databases</p>
+      <div class="skill-items">
+        <span class="skill-chip">PostgreSQL</span>
+        <span class="skill-chip">MySQL</span>
+        <span class="skill-chip">pgvector</span>
+        <span class="skill-chip">SQLite</span>
+        <span class="skill-chip">Query Opt.</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-label">Security</p>
+      <div class="skill-items">
+        <span class="skill-chip">Kali Linux</span>
+        <span class="skill-chip">Red Teaming</span>
+        <span class="skill-chip">Ethical Hacking</span>
+        <span class="skill-chip">CISSP</span>
+        <span class="skill-chip">ISC2 CC</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <p class="skill-group-label">Tools &amp; Platforms</p>
+      <div class="skill-items">
+        <span class="skill-chip">Git/GitHub</span>
+        <span class="skill-chip">Odoo</span>
+        <span class="skill-chip">Postman</span>
+        <span class="skill-chip">Gunicorn</span>
+        <span class="skill-chip">LangGraph</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-in">
+    <span class="section-label">projects</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid fade-in">
+
+    <div class="project-card">
+      <p class="project-num">01 / AI</p>
+      <h3 class="project-title">AI Incident Remediation System</h3>
+      <p class="project-desc">AI-driven infrastructure diagnostics using LangGraph. Diagnoses live incidents and auto-generates Terraform/Bash remediation steps. Supports local LLMs via Ollama with pgvector for incident similarity search.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">pgvector</span>
+        <span class="stack-tag">Terraform</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <p class="project-num">02 / AUTOMATION</p>
+      <h3 class="project-title">Automated AI Reporting System</h3>
+      <p class="project-desc">Production-deployed AI reporting pipeline: collects employee reports, runs AI analysis, delivers scheduled email summaries. Full-stack prod deployment: Flask + APScheduler + Gunicorn + Nginx + Cloudflare on a Linux VPS.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">APScheduler</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">Gunicorn</span>
+        <span class="stack-tag">Nginx</span>
+        <span class="stack-tag">Cloudflare</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <p class="project-num">03 / MONITORING</p>
+      <h3 class="project-title">ERP / API Monitoring Dashboard</h3>
+      <p class="project-desc">Self-hosted API health monitor with background scheduler, continuous uptime checks, response tracking, and Gmail SMTP alerting. JWT/API key auth. Fully containerized.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">SQLite</span>
+        <span class="stack-tag">JWT</span>
+        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">SMTP</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <p class="project-num">04 / CLOUD</p>
+      <h3 class="project-title">PrestaShop E-Commerce on AWS</h3>
+      <p class="project-desc">End-to-end e-commerce deployment on AWS EC2 with RDS MySQL backend. Hardened with security groups, SSH access controls, and server permissions for secure public hosting.</p>
+      <div class="project-stack">
+        <span class="stack-tag">AWS EC2</span>
+        <span class="stack-tag">RDS MySQL</span>
+        <span class="stack-tag">PrestaShop</span>
+        <span class="stack-tag">Linux</span>
+        <span class="stack-tag">SSH</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header fade-in">
+    <span class="section-label">contact</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-grid fade-in">
+    <div>
+      <p style="font-size:13px; color:var(--text2); line-height:1.8; margin-bottom:1.5rem;">
+        Open to systems engineering, DevOps, and infrastructure roles.<br>
+        Also interested in red team / offensive security projects.<br>
+        Based in Lagos — available remote or on-site.
+      </p>
+      <div class="terminal" style="max-width:380px;">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <span class="terminal-title">ping neo</span>
+        </div>
+        <div class="terminal-body" style="font-size:12px;">
+          <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">ping osagieebonni@gmail.com</span></span>
+          <span class="t-line t-out">PING gmail.com: 56 bytes of data</span>
+          <span class="t-line t-out" style="color:var(--green);">64 bytes from Neo: time=&lt;24hrs</span>
+          <span class="t-line t-out"><span class="t-comment"># always responds. let's talk.</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:osagieebonni@gmail.com" class="contact-link">
+        <span class="contact-link-icon">@</span>
+        <div>
+          <p class="contact-link-label">Email</p>
+          <p class="contact-link-val">osagieebonni@gmail.com</p>
+        </div>
+      </a>
+      <a href="https://github.com/osa-new" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-icon">&lt;/&gt;</span>
+        <div>
+          <p class="contact-link-label">GitHub</p>
+          <p class="contact-link-val">github.com/osa-new</p>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/osagie-ebonni-57922a214" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-icon">in</span>
+        <div>
+          <p class="contact-link-label">LinkedIn</p>
+          <p class="contact-link-val">Osagie Newton Ebonni</p>
+        </div>
+      </a>
+      <a href="tel:+2347063670434" class="contact-link">
+        <span class="contact-link-icon">#</span>
+        <div>
+          <p class="contact-link-label">Phone</p>
+          <p class="contact-link-val">+234 706 367 0434</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Osagie Newton Ebonni</span>
+  <span style="color:var(--text3);">built with <span style="color:var(--green);">&lt;/&gt;</span> and caffeine</span>
+</footer>
+
+<script>
+  function toggleExp(el) {
+    const body = el.querySelector('.exp-body');
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.exp-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.exp-body').classList.remove('open');
+    });
+    if (!isOpen) {
+      el.classList.add('open');
+      body.classList.add('open');
+    }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
